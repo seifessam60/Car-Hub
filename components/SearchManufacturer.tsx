@@ -26,28 +26,28 @@ function SearchManufacturer({
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
   return (
-    <div className='search-manufacturer'>
+    <div className="search-manufacturer">
       <Combobox value={manufacturer} onChange={setManufacturer}>
-        <div className='relative w-full'>
+        <div className="relative w-full">
           <ComboboxButton className={"absolute top-[14px]"}>
             <Image
               src={"/car-logo.svg"}
               width={20}
               height={20}
-              alt='car logo'
+              alt="car logo"
             />
           </ComboboxButton>
           <ComboboxInput
             className={"search-manufacturer__input"}
-            placeholder='Volkswagen'
+            placeholder="Volkswagen"
             displayValue={(manufacturer: string) => manufacturer}
             onChange={(e) => setQuery(e.target.value)}
           />
           <Transition
             as={Fragment}
-            leave='transition ease-in duration-100'
-            leaveFrom='opacity-100'
-            leaveTo='opacity-0'
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
             afterLeave={() => setQuery("")}
           >
             <ComboboxOptions>
